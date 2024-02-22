@@ -69,6 +69,12 @@ After running the command above the Swagger API documentation server will be acc
 
 The whole application runs at http://127.0.0.1:8000
 
+10. Run the unit tests with
+
+```
+    php artisan test
+```
+
 
 **Make sure you set the correct database connection information before running the migrations**
 
