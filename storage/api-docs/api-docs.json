@@ -1,0 +1,73 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Upwork API Test",
+        "description": "This is a demonstration of Upwork Submission test as part of proposal submited by Boosuro Stephen",
+        "contact": {
+            "name": "Developer",
+            "url": "https://boosurostephen.com/my-portfolio",
+            "email": "boosurostephen@yahoo.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000",
+            "description": "PHP TEST API Server"
+        }
+    ],
+    "paths": {
+        "/api/v1/submit": {
+            "post": {
+                "tags": [
+                    "Submission"
+                ],
+                "summary": "Store Submission",
+                "description": "Store Submission",
+                "operationId": "storeSubmission",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "Name",
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "email": {
+                                        "description": "Email",
+                                        "type": "string",
+                                        "example": "john.doe@example.com"
+                                    },
+                                    "message": {
+                                        "description": "Message",
+                                        "type": "string",
+                                        "example": "This is a test message."
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "submission received successfully",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    }
+}
