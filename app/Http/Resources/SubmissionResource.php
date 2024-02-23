@@ -15,7 +15,7 @@ class SubmissionResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'name' => $thisname,
+            'name' => $this->name,
             'email' => $this->email,
             'message' => $this->message,
         ];
